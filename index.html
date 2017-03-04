@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+  <h1>Llenar Datos</h1>
+
+	<form id="frm1">
+    <p>Nombre: <input type="text" name="name" id="name"></p>
+    <p>Mail: <input type="text" name="email" id="email"></p>
+	</form>
+	<button onclick="myFunction()">Mostrar</button>
+
+	<p id="mostrarNombre"></p>
+	<p id="mostrarMail"></p>
+
+	<script>
+		function myFunction() {
+			//selecionar los elementos por su Id
+      var nombre = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var pNombre = document.getElementById('mostrarNombre');
+      var pMail = document.getElementById('mostrarMail');
+				//imprimir en cada parrafo solo si estan llenos los campos
+				if(nombre!="" && email!= ""){
+					pNombre.innerHTML ="<strong>Nombre Ingresado: </strong>"+nombre;
+					pMail.innerHTML = "<strong>Email Ingresado: </strong>"+email;
+				}else{
+					alert("Llenar los campos");
+				}
+		}
+	</script>
+</body>
+</html>
